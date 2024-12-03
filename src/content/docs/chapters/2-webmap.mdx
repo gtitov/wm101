@@ -109,8 +109,8 @@ import Question from '../../../components/Question.astro'
     <!-- Запрашиваем стили 👇 -->
     <link rel="stylesheet" href="style.css">
     <!-- Запрашиваем библиотеку Maplibre 👇 -->
-    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script> 
-    <link href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script> 
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -128,10 +128,6 @@ import Question from '../../../components/Question.astro'
 Создадим файл стилей `style.css`.
 
 ```css title="style.css"
-body {
-    margin: 0;
-}
-
 /* Объявляем, что контейнер карты должен занимать всю страницу */
 #map {
     position: absolute;
