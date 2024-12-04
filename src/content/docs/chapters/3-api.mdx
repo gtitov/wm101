@@ -7,11 +7,12 @@ import Question from '../../../components/Question.astro'
 
 
 
+
 В этой главе
 
 - определение API
 - асинхронность JavaScript
-- запрос fetch...then
+- запрос `fetch...then`
 
 ## API
 
@@ -104,7 +105,7 @@ map.on("load", () => {
 
 В консоль вывелся Promise -- обещание того, что браузер уже занимается нашим запросом. Ответ от сервера не вывелся, хотя во вкладке Сеть мы видим, что данные загружены. Дело в том, что вывод в консоль был выполнен раньше, чем мы получили ответ от сервера.
 
-> Браузер начал исполнять наш код, увидел запрос к внешему ресурсу и подумал: "Здесь можно завязнуть. Ещё неизвестно, сколько этот внешний ресурс будет отвечать. Я верну пока обещание, что когда будет ответ, я его предоставлю, и отправлю запрос. А пока жду ответа буду дальше код выполнять.""
+> Браузер начал исполнять наш код, увидел запрос к внешему ресурсу и подумал: "Здесь можно завязнуть. Ещё неизвестно, сколько этот внешний ресурс будет отвечать. Я верну пока обещание, что когда будет ответ, я его предоставлю, и отправлю запрос. А пока жду ответа буду дальше код выполнять."
 
 Запрос к внешнему ресурсу выполняется асинхронно, то есть изымается из последовательного выполнения программного кода и выполняется отдельно. Поэтому вывод в консоль выполняется раньше того, как данные получены.
 
@@ -121,6 +122,7 @@ map.on("load", () => {
 })
 ```
 
+
 <details>
 <summary>В первой карте тоже был асинхронный код</summary>
 
@@ -132,36 +134,32 @@ map.on("load", () => {
 
 MapLibre не может работать с форматом CSV. Мы должны преобразовать данные в знакомый формат GeoJSON. Сделаем это!
 
+Подключим библиотеку для чтения CSV данных в JS-объект.
+
+```html title="index.html"
+<head>
+  ...
+  <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+```
+
+Выполним чтение CSV данных c использованием подключенной библиотеки и сконструируем GeoJSON-объект.
+
 ```js title="main.js"
 .then((csv) => {
-  const csvRows = csv.split("\r\n"); // разбиваем текст на строки
-  const colnames = csvRows[0].split(",") // разбиваем первую строку по колонкам
-  const rows = csvRows.slice(1); // берём всё кроме первой строки
+  const rows = Papa.parse(csv, { header: true }) // читаем CSV
+  // console.log(rows) // любуемся
   // Формируем объекты GeoJSON
-  const geojsonFeatures = rows.map((row) => { // проходим по каждой строке
-    const rowValues = row.split(","); // разбиваем строку по колонкам
-
-    // Формируем атрибуты объекта
-    const properties = {}
-    rowValues.map((propertyValue, index) => {
-      properties[colnames[index]] = propertyValue // названия атрибутов берём из первой строки
-    })
-
-    // Формируем геометрию объекта
-    const geometry = {
-      type: "Point",
-      coordinates: [properties.lon, properties.lat],
-    }
-
-    // Собираем GeoJSON объект
+  const geojsonFeatures = rows.data.map((row) => {
     return {
       type: "Feature",
-      properties: properties,
-      geometry: geometry
+      properties: row,
+      geometry: {
+        type: "Point",
+        coordinates: [row.lon, row.lat],
+      }
     }
   })
-
-  // Собираем полный GeoJSON
   const geojson = {
     type: "FeatureCollection",
     features: geojsonFeatures
@@ -169,7 +167,7 @@ MapLibre не может работать с форматом CSV. Мы долж
 })
 ```
 
-Своими руками собрали GeoJSON из CSV-данных! GeoJSON уже можно использовать в качестве источника для MapLibre.
+GeoJSON уже можно использовать в качестве источника для MapLibre.
 
 ## Работа над картой
 
@@ -186,8 +184,8 @@ MapLibre не может работать с форматом CSV. Мы долж
   map.addSource("vacancies", {
     type: "geojson",
     data: geojson,
-    cluster: true,
-    clusterRadius: 20,
+    cluster: true, // точки будем объединять в кластеры
+    clusterRadius: 20, // радиус поиска 20 пикселей
   });
 
   map.addLayer({
@@ -215,7 +213,6 @@ MapLibre не может работать с форматом CSV. Мы долж
     source: "vacancies",
     layout: {
       "text-field": ["get", "point_count"],
-      "text-font": ["Noto Sans Regular"],
       "text-size": 10,
     },
   });
@@ -351,10 +348,23 @@ map.on("load", () => {
 })
 ```
 
+Проделана прекрасная работа!
+
+При желании посмотрите [полный код](https://github.com/gtitov/sheet-maplibre-map) и [возможный результат](https://gtitov.github.io/sheet-maplibre-map/).
+
+## Упражнения
+
+1. Сделайте, чтобы до первого перемещения карты список вакансий "Сейчас на карте" тоже был заполнен
+1. Поменяйте местами списки (CSS)
+1. Сделайте так, чтобы цвет кластера зависел от количества элементов внутри него
+
 ## Чтение
 
-https://docs.cntd.ru/document/1200145773
-https://doka.guide/tools/api/
-https://doka.guide/js/fetch/
-https://doka.guide/js/async-in-js/
-https://doka.guide/js/promise/
+1. ГОСТ Р ИСО/МЭК 24730-1-2017 Информационные технологии. Системы позиционирования в реальном времени (RTLS). Часть 1. Прикладной программный интерфейс (API) [ссылка](https://docs.cntd.ru/document/1200145773)
+1. Что такое API / Дока [ссылка](https://doka.guide/tools/api/)
+1. Асинхронность в JavaScript / Дока [ссылка](https://doka.guide/js/async-in-js/)
+1. fetch() / Дока [ссылка](https://doka.guide/js/fetch/)
+1. Promise / Дока [ссылка](https://doka.guide/js/promise/)
+
+
+
