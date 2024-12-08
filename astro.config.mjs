@@ -11,14 +11,12 @@ export default defineConfig({
     },
     integrations: [starlight({
         title: 'Веб-картография',
+        description: 'Веб-картография и веб-картографирование: практическое пособие',
         locales: {
             root: {
                 label: 'Русский',
                 lang: 'ru',
             }
-        },
-        social: {
-            github: 'https://github.com/withastro/starlight',
         },
         sidebar: [
             {

@@ -100,7 +100,7 @@ def cities_by_year(year): # функция, которая будет выпол
     }
     r = Response( # формируем ответ
         json.dumps(geojson, ensure_ascii=False), # ensure_ascii=False, чтобы нормально отображалась кириллица
-        mimetype="text/json" # указываем тип данных
+        mimetype="application/json" # указываем тип данных
     )
     # print("--- %s seconds ---" % (time.time() - start_time))
     return r
@@ -143,7 +143,7 @@ def city_by_id(id):
     db.close()
     r = Response(
         json.dumps(dict(city), ensure_ascii=False),
-        mimetype="text/json",
+        mimetype="application/json",
     )
     # print("--- %s seconds ---" % (time.time() - start_time))
     return r
@@ -213,7 +213,7 @@ def cities_by_year(year): # функция, которая будет выпол
     ...
     r = Response( # формируем ответ
         json.dumps(geojson, ensure_ascii=False), # ensure_ascii=False, чтобы нормально отображалась кириллица
-        mimetype="text/json", # указываем тип данных
+        mimetype="application/json", # указываем тип данных
 +        headers={"Access-Control-Allow-Origin": "*"}
     )
     # print("--- %s seconds ---" % (time.time() - start_time))
@@ -224,7 +224,7 @@ def city_by_id(id):
     ...
     r = Response(
         json.dumps(dict(city), ensure_ascii=False),
-        mimetype="text/json",
+        mimetype="application/json",
 +        headers={"Access-Control-Allow-Origin": "*"}
     )
     # print("--- %s seconds ---" % (time.time() - start_time))
