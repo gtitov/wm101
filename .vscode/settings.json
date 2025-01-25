@@ -1,0 +1,8 @@
+{
+    "markdown.copyFiles.destination": {
+        "src/content/docs/**/*": "${documentWorkspaceFolder}/src/assets/${fileName}"
+    },
+    "files.associations": {
+        // "*.mdx": "markdown"
+    },
+}
