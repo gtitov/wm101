@@ -2,29 +2,10 @@
 const { answer, ballast, explanation } = Astro.props;
 ---
 
-<style>
-  input {
-    vertical-align: middle;
-  }
-  .option {
-    position: relative;
-  }
-  #answer-check {
-    color: white;
-    position: absolute;
-    transform: scale(-1, 1);
-    rotate: 95deg;
-    left: 6px;
-    top: 3px;
-    display: none;
-  }
-</style>
-
 <fieldset style={{ border: "none" }}>
   {
     [
       <div class="option">
-          <i id="answer-check">‹</i>
           <input type="radio" id="answer" name={answer} />
           <label for="answer">{answer}</label>
       </div>,
