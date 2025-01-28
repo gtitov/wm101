@@ -1,6 +1,7 @@
 ---
 title: Заключение
 tableOfContents: false
+draft: true
 ---
 
 <div style="text-align: right; font-style: italic; line-height: 0.5rem">
