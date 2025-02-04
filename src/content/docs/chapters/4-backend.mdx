@@ -25,7 +25,7 @@ import { Card, FileTree, LinkCard, TabItem, Tabs } from '@astrojs/starlight/comp
 
 Создадим папку с заготовкой для нашей карты.
 
-Добавим туда папку `backend`. Загрузим [отсюда](https://github.com/gtitov/flask-maplibre-map/raw/refs/heads/main/backend/cities_index.sqlite) и положим туда базу данных. И создадим в этой папке файл с нашим бэкендом `app.py`.
+Добавим туда папку `backend`. Загрузим [отсюда](https://github.com/gtitov/flask-maplibre-map/raw/refs/heads/main/backend/cities_index.sqlite) базу данных и положим в созданную папку `backend`. Cоздадим в этой папке файл с нашим бэкендом `app.py`.
 
 <FileTree>
 - backend/
@@ -145,7 +145,7 @@ def city_by_id(id):
         json.dumps(dict(city), ensure_ascii=False),
         mimetype="application/json",
     )
-    # print("--- %s seconds ---" % (time.time() - start_time))
+    print("--- %s seconds ---" % (time.time() - start_time))
     return r
 ```
 
@@ -173,15 +173,11 @@ map.on("load", () => {
             'circle-stroke-color': '#FFFFFF',
             // SELECT MIN(total_points), MAX(total_points) FROM cities
             'circle-color': [
-                'interpolate',
-                ['linear'],
+                'interpolate', ['linear'],
                 ['get', 'total_points'],
-                50,
-                '#d7191c',
-                150,
-                '#ffffbf',
-                250,
-                '#1a9641'
+                50, '#d7191c',
+                150, '#ffffbf',
+                250, '#1a9641'
             ],
             'circle-opacity': 0.8,
             // SELECT DISTINCT group_name FROM cities
@@ -244,7 +240,7 @@ def city_by_id(id):
   <div id='map'></div>
   <dialog id="city-details-modal" onmousedown="this.close()"></dialog>
 +  <div>
-+    <p class="text-center">Год</p>
++    <p>Год</p>
 +    <select id="year-selector">
 +      <option value="2020" selected>2020</option>
 +      <option value="2019">2019</option>
