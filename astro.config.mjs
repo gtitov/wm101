@@ -9,23 +9,36 @@ export default defineConfig({
     redirects: {
         '/': '/chapters',
     },
-    integrations: [starlight({
-        title: 'Веб-картография',
-        description: 'Веб-картография и веб-картографирование: практическое пособие',
-        locales: {
-            root: {
-                label: 'Русский',
-                lang: 'ru',
+    integrations: [
+        starlight({
+            title: 'Веб-картография',
+            description: 'Веб-картография и веб-картографирование: практическое пособие',
+            head: [
+                {
+                    tag: 'script',
+                    attrs: {
+                        src: "//gc.zgo.at/count.js",
+                        'data-goatcounter': "https://webkartography.goatcounter.com/count",
+                        async: true
+                    }
+                }
+            ],
+            locales: {
+                root: {
+                    label: 'Русский',
+                    lang: 'ru',
+                }
+            },
+            sidebar: [
+                {
+                    label: 'Введение в веб-картографию',
+                    autogenerate: { directory: 'chapters' },
+                }
+            ],
+            components: {
+                SocialIcons: './src/components/CustomSocialIcons.astro',
             }
-        },
-        sidebar: [
-            {
-                label: 'Введение в веб-картографию',
-                autogenerate: { directory: 'chapters' },
-            }
-        ],
-        components: {
-            SocialIcons: './src/components/CustomSocialIcons.astro',
-        }
-    }), react()],
+        }),
+        react()
+    ],
 });
