@@ -18,7 +18,7 @@ export default defineConfig({
                     tag: 'script',
                     attrs: {
                         src: "//gc.zgo.at/count.js",
-                        'data-goatcounter': "https://webkartography.goatcounter.com/count",
+                        'data-goatcounter': "https://webcartography.goatcounter.com/count",
                         async: true
                     }
                 }
