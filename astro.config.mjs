@@ -35,9 +35,7 @@ export default defineConfig({
                     autogenerate: { directory: 'chapters' },
                 }
             ],
-            components: {
-                SocialIcons: './src/components/CustomSocialIcons.astro',
-            }
+            components: {}
         }),
         react()
     ],
