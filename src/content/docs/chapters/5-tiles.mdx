@@ -2,7 +2,7 @@
 title: Тайлы
 ---
 
-import { Card, LinkCard } from '@astrojs/starlight/components';
+import { Card, LinkCard } from "@astrojs/starlight/components";
 
 В этой главе мы рассмотрим
 
@@ -32,7 +32,7 @@ import { Card, LinkCard } from '@astrojs/starlight/components';
 
 Растровые тайлы можно использовать как для растровых данных, например, снимков, ЦМР, индексных изображений, так и для векторных, когда на тайлы будет нарезаться подготовленное изображение карты. Векторные тайлы, в большинстве случаев, оказываются удачным решением для векторных наборов данных.
 
-<LinkCard title='Тайлы растровые и векторные' href='/chapters/7-extra/#тайлы-векторные-и-растровые' description='Что лучше 🤨'/>
+<LinkCard title="Тайлы растровые и векторные" href="/chapters/7-extra/#тайлы-векторные-и-растровые" description="Что лучше 🤨"/>
 
 ## Использование тайлов
 
@@ -81,6 +81,8 @@ import { Card, LinkCard } from '@astrojs/starlight/components';
 Грузить в базу будем данные об ойконимах Московского региона: 
 1. точки -- [скачать](https://disk.yandex.ru/d/nYXeBHLxJ0yv-w)
 2. агрегирующие их шестиугольники -- [скачать](https://disk.yandex.ru/d/UZZy0xkSuO94-Q)
+
+> Здесь используем данные, которые Яндекс опубликовал в рамках [интересного исследования 2021 года](https://yandex.ru/company/researches/2021/oikonyms) о населённых пунктах на карте России.
 
 Сделаем это через [QGIS](https://www.qgis.org/download/).
 
@@ -188,6 +190,8 @@ map.addLayer({
 
 Слой с сеткой шестиугольников раскрасим интерполяцией цвета по полю численности населения в ячейке.
 
+> Обратите внимание, поле `sum_pop` внутри карты является текстом, хотя в базе и векторном тайле указан числовой формат. Такое бывает. Проверить объект внутри карты всегда можно функцией `map.on("click", "grid-layer", (e) => console.log(e.features))`
+
 ```js title=main.js
 map.addLayer({
     id: "grid-layer",
@@ -197,11 +201,11 @@ map.addLayer({
     paint: {
         "fill-color": [
             "interpolate", ["linear"],
-            ['to-number', ["get", "sum_pop"]],
+            ["to-number", ["get", "sum_pop"]],
             0, "#440154",
             100, "#39568c",
-            1000, '#1f968b',
-            10000, '#fde725'
+            1000, "#1f968b",
+            10000, "#fde725"
         ]
     }
 })
@@ -225,9 +229,73 @@ map.addLayer({
 })
 ```
 
+#### Мультимасштабное содержание
+
+На картах можно менять уровень приближения. Картограф должен озаботится тем, чтобы содержание на каждом уровне было визуально понятным и приятным.
+
+Точки ойконимов в мелком масштабе накладываются друг на друга и закрывают шестиугольники. Не будем показывать их до 9-го уровня зума.
+
+```diff title=main.js
+map.addLayer({
+    id: "oikonyms-layer",
+    source: "oikonyms",
+    "source-layer": "oikonyms",
+    type: "circle",
+    paint: {
+        "circle-color": "#1a9641",
+        "circle-radius": 6,
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#FFF",
+        "circle-opacity": 0.8
+    },
++    minzoom: 9    
+})
+```
+
+Также ограничим возможности максимального отдаления и приближения веб-карты. Другими словами, установим минимальный и максимальных масштаб карты. При этом наибольшую степень приближения зафиксируем как максимальный зум `maxZoom`, а наибольшую степень отдаления как максимальный охват карты `maxBounds`.
+
+```diff title=main.js
+const map = new maplibregl.Map({
+    container: "map",
+    style: "https://raw.githubusercontent.com/gtitov/basemaps/refs/heads/master/voyager-nolabels.json",
+    center: [37, 55],
+    zoom: 6,
++    maxZoom: 11,
++    maxBounds: [[25, 50], [50, 60]],
+    hash: true,
+})
+```
+
+{/* О свойствах minzoom, maxzoom для карты, источника и слоя */}
+
+#### Подлёт при клике
+
+Подскажем пользователю, что содержание карты является мультимасштабным.
+
+При клике на ячейку сетки подлетим к точке клика на 10 уровень зума, при котором отображаются ойконимы внутри ячейки. Чтобы подчеркнуть доступное интерактивное действие, используем изменение курсора.
+
+```js title=main.js
+map.on("click", "grid-layer", (e) => {
+    map.flyTo({
+        center: e.lngLat,
+        zoom: 10
+    })
+})
+
+map.on("mouseenter", "grid-layer", () => {
+    map.getCanvas().style.cursor = "pointer"
+})
+
+map.on("mouseleave", "grid-layer", () => {
+    map.getCanvas().style.cursor = ""
+})
+```
+
 #### Подсветка при наведении
 
-Мы уже видели изменение курсора при наведении на объект. Ещё одним вариантом является подсветка объекта при наведении курсора. Воспользуемся одним из способов реализации обводки.
+Изменение курсора при наведении на объект намекает на доступное интерактивное действие. Но ещё лучше его наличие подчеркнёт подсветка объекта при наведении курсора. Воспользуемся вариантом подсветки объекта с помощью его обводки.
+
+Сначала зафиксируем объект, на котором находится курсор.
 
 Назначим поле `id` из свойств слоя идентификатором объектов слоя.
 
@@ -239,7 +307,7 @@ map.addSource("grid", {
 })
 ```
 
-Присвоим объектам слоя состояние `hover`, которое будет становиться для объекта`true`, когда курсор попадает на объект, и `false`, когда курсор переходит на другой объект или покидает слой.
+Присвоим объекту состояние `hover: true`, когда курсор попадает на объект, и `hover: false`, когда курсор переходит на другой объект или покидает слой.
 
 ```js title=main.js
 let hoveredFeatureId = null;
@@ -284,7 +352,10 @@ map.on("mouseleave", "grid-layer", () => {
     )
 })
 ```
+
 На основе состояния объекта делаем обводку.
+
+> Объекты, которые курсор не трогал, не будут иметь состояния `hover` вообще. Для таких объектов через выражение `boolean` мы присваиваем значение `false`, чтобы они корректно обработались в выражении `case`.
 
 ```diff title=main.js
 map.addLayer({
@@ -296,19 +367,19 @@ map.addLayer({
         "fill-color": [
             "interpolate",
             ["linear"],
-            ['to-number', ["get", "sum_pop"]],
+            ["to-number", ["get", "sum_pop"]],
             0,
             "#440154",
             100,
             "#39568c",
             1000,
-            '#1f968b',
+            "#1f968b",
             10000,
-            '#fde725'
+            "#fde725"
         ],
-+        'fill-outline-color': [
-+            'case',
-+            ['boolean', ['feature-state', 'hover'], false],
++        "fill-outline-color": [
++            "case",
++            ["boolean", ["feature-state", "hover"], false],
 +            "cyan",
 +            "transparent"
 +        ]
@@ -316,26 +387,7 @@ map.addLayer({
 })
 ```
 
-#### Подлёт при клике
-
-Действием при клике на ячейку сетки будет подлёт к точке клика на 10 уровень зума. Чтобы подчеркнуть интерактивность слоя, к обводке добавим и изменение курсора.
-
-```js title=main.js
-map.on("click", "grid-layer", (e) => {
-    map.flyTo({
-        center: e.lngLat,
-        zoom: 10
-    })
-})
-
-map.on('mouseenter', 'grid-layer', () => {
-    map.getCanvas().style.cursor = 'pointer'
-})
-
-map.on('mouseleave', 'grid-layer', () => {
-    map.getCanvas().style.cursor = ''
-})
-```
+Изменение курсора и подсветка ячейки ясно указывают пользователю, что на ячейку можно кликнуть и что-то произойдёт. В нашем случае, мы подлетим к карте до уровня видимости ойконимов.
 
 #### Попап при наведении
 
@@ -347,33 +399,17 @@ const popup = new maplibregl.Popup({
     closeOnClick: false
 });
 
-map.on('mouseenter', 'oikonyms-layer', (e) => {
+map.on("mouseenter", "oikonyms-layer", (e) => {
     popup
         .setLngLat(e.features[0].geometry.coordinates)
         .setHTML(e.features[0].properties.name)
         .addTo(map);
 });
 
-map.on('mouseleave', 'oikonyms-layer', () => {
+map.on("mouseleave", "oikonyms-layer", () => {
     popup.remove();
 });
-```
-
-#### Фиксированный охват карты
-
-Запретим перемещаться по карте за пределы нашей области интереса.
-
-```diff title=main.js
-const map = new maplibregl.Map({
-    container: "map",
-    style: "https://raw.githubusercontent.com/gtitov/basemaps/refs/heads/master/voyager-nolabels.json",
-    center: [37, 55],
-    zoom: 6,
-    maxZoom: 11,
-+    maxBounds: [[25, 50], [50, 60]],
-    hash: true,
-})
-```
+``` 
 
 #### Интерактивная фильтрация
 
@@ -450,8 +486,9 @@ document.getElementById("filter").addEventListener("input", (e) => {
 
 ## Упраженения
 
-1. Сделайте так, чтобы при наведении курсора точки ойконимов становились немного большинстве
+1. Сделайте так, чтобы при наведении курсора на точку из слоя ойконимов она становилась немного больше
 1. Добавьте на карту инструмент фильтрации населённых пунктов по первой букве названия
+1. Добавьте обводку в 3 пикселя ячейке, на которую был выполнен клик. Сделайте так, чтобы обводка исчезала при зуме меньше 9.
 
 ## Чтение
 
