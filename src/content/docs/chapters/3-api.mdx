@@ -4,6 +4,8 @@ title: API
 
 import { Card, FileTree, LinkCard, TabItem, Tabs } from '@astrojs/starlight/components';
 import Question from '../../../components/Question.astro';
+import MultipleChoice from '../../../components/MultipleChoice.astro';
+import Option from '../../../components/Option.astro';
 
 
 
@@ -89,8 +91,27 @@ API обычно переводят как прикладной программ
   </TabItem>
 </Tabs>
 
+{/* <Card title={'Строка <code>&lt;div id="map">&lt;/div></code> это'}> */}
+    {/* <Question answer="контейнер для карты" ballast={['инициализация карты', 'стиль карты']} explanation="Это разметка контейнера карты"/> */}
+{/* </Card> */}
+
 <Card title={'Строка <code>&lt;div id="map">&lt;/div></code> это'}>
-    <Question answer="контейнер для карты" ballast={['инициализация карты', 'стиль карты']} explanation="Это разметка контейнера карты"/>
+    <MultipleChoice>
+      <Option isCorrect>
+        контейнер для карты
+      </Option>
+      <Option>
+        инициализация карты
+      </Option>
+      <Option>
+        стиль карты
+      </Option>
+    </MultipleChoice>
+
+    <details>
+      <summary>Развёрнутый ответ</summary>
+      Этой строкой мы размечаем контейнер для карты в HTML-файле. В JavaScript-файле мы обращаемся к этому контейнеру по `id`
+    </details>
 </Card>
 
 Удостоверимся, что карта отображается на локальном сервере.
