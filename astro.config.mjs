@@ -6,12 +6,9 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-    redirects: {
-        '/': '/chapters',
-    },
     integrations: [
         starlight({
-            title: 'Веб-картография',
+            title: 'Практическое введение в веб-картографию',
             description: 'Веб-картография и веб-картографирование: практическое пособие',
             head: [
                 {
@@ -29,12 +26,6 @@ export default defineConfig({
                     lang: 'ru',
                 }
             },
-            sidebar: [
-                {
-                    label: 'Введение в веб-картографию',
-                    autogenerate: { directory: 'chapters' },
-                }
-            ],
             components: {}
         }),
         react()
