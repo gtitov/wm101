@@ -15,7 +15,3 @@ tableOfContents: false
 10. **Neumann A.** Web Mapping and Web Cartography. In Springer Handbook of Geographic Information, edited by Wolfgang Kresse and David M. Danko, 273–87. Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. [[↗]](https://doi.org/10.1007/978-3-540-72680-7_14)
 11. **Myslenkov S., Samsonov T., Shurygina A. et al.** Wind waves web atlas of the russian seas // Water. — 2023. — Vol. 15, no. 11. — P. 2036. [[↗]](http://dx.doi.org/10.3390/w15112036)
 12. ГОСТ Р 58570-2019. Инфраструктура Пространственных Данных. Общие Требования // Стандартинформ, 2019. [[↗]](https://docs.cntd.ru/document/1200168445)
-
----
-
-Титов Г. С. Практическое введение в веб-картографию. Москва, 2025.

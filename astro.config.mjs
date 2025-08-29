@@ -26,7 +26,10 @@ export default defineConfig({
                     lang: 'ru',
                 }
             },
-            components: {}
+            components: {
+                SiteTitle: './src/components/SiteTitle.astro',
+                Sidebar: './src/components/Sidebar.astro',
+            }
         }),
         react()
     ],
