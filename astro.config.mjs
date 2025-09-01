@@ -10,6 +10,7 @@ export default defineConfig({
         starlight({
             title: 'Практическое введение в веб-картографию',
             description: 'Веб-картография и веб-картографирование: практическое пособие',
+            favicon: '/icon.png',
             head: [
                 {
                     tag: 'script',
@@ -18,6 +19,14 @@ export default defineConfig({
                         'data-goatcounter': "https://webcartography.goatcounter.com/count",
                         async: true
                     }
+                },
+                {
+                    tag: 'link',
+                    attrs: {
+                        rel: 'icon',
+                        href: '/favicon.ico',
+                        sizes: '32x32',
+                    },
                 }
             ],
             locales: {
