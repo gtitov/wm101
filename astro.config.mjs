@@ -38,7 +38,24 @@ export default defineConfig({
             components: {
                 SiteTitle: './src/components/SiteTitle.astro',
                 Sidebar: './src/components/Sidebar.astro',
-            }
+            },
+            sidebar: [
+                'index',
+                '1-webmapping',
+                '2-webmap',
+                '3-api',
+                '4-backend',
+                '5-tiles',
+                // '7-conclusion',
+                '99-references',
+                {
+                    label: 'Внеклассное чтение',
+                    autogenerate: {
+                        directory: 'extra',
+                        collapsed: true
+                    }
+                }
+            ]
         }),
         react()
     ],
