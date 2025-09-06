@@ -2,7 +2,7 @@
 title: Веб-карта
 ---
 
-import { Card, FileTree, LinkCard } from '@astrojs/starlight/components';
+import { Card, FileTree, LinkCard, CardGrid } from '@astrojs/starlight/components';
 import Question from '../../components/Question.astro';
 import MultipleChoice from '../../components/MultipleChoice.astro';
 import Option from '../../components/Option.astro';
@@ -16,6 +16,7 @@ import Option from '../../components/Option.astro';
 
 В рамках практической части создадим карту мира на основе GeoJSON-файлов с использованием открытой библиотеки MapLibre GL JS. При желании заранее посмотреть [полный код](https://github.com/gtitov/geojson-maplibre-map) и [возможный результат](https://gtitov.github.io/geojson-maplibre-map/).
 
+<LinkCard title='Руки чешутся' href='#создание-первой-веб-карты' description='Сразу к практике'/>
 
 ## Карты в Интернете
 
@@ -433,6 +434,13 @@ map.on('load', () => {
 1. Веб-карта обогащается дополнительной интерактивностью в рамках описанной разработчиком логики
 
 Такая карта удобна, когда немного данных, потому что мы всё переправляем пользователю данные как есть. Когда мы отправляем пользователю данные как есть, почти не требуется серверных мощностей, поэтому для таких карт есть варианты бесплатного размещения в Интернете.
+
+*Перед тем как броситься на выполнение упражнений, полезно сделать паузу, выпить чаю и немного почитать*
+
+<CardGrid>
+    <LinkCard title='Теоретическая база' href='/extra/web-mapping' description='Веб-картографирование и веб-картография'/>
+    {/* <LinkCard title='Исторический экскурс' href='/extra/brief-history' description='Краткая история веб-картографии'/> */}
+</CardGrid>
 
 ## Упражнения
 

@@ -41,12 +41,11 @@ export default defineConfig({
             },
             sidebar: [
                 'index',
-                '1-webmapping',
-                '2-webmap',
-                '3-api',
-                '4-backend',
-                '5-tiles',
-                // '7-conclusion',
+                '1-web-map',
+                '2-api',
+                '3-backend',
+                '4-tiles',
+                // 'what-next',
                 '99-references',
                 {
                     label: 'Внеклассное чтение',

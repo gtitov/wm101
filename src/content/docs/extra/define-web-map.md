@@ -3,7 +3,7 @@ title: Как определить веб-карту
 draft: true
 tableOfContents: false
 sidebar:
-    order: 2
+    order: 3
 ---
 
 В университете я думал -- сделанная с помощью картографической библиотеки

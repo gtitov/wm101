@@ -2,7 +2,7 @@
 title: PostGIS
 tableOfContents: false
 sidebar:
-    order: 5
+    order: 6
 ---
 
 Связка Postgres + PostGIS -- это зарекомендовавшее себя открытое решение для работы с пространственными данными в сети.
