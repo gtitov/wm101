@@ -43,7 +43,7 @@ import Option from '../../components/Option.astro';
 
 Создадим папку с заготовкой для нашей карты.
 
-Добавим туда папку `backend`. Загрузим [отсюда](https://github.com/gtitov/flask-maplibre-map/raw/refs/heads/main/backend/cities_index.sqlite) базу данных и положим в созданную папку `backend`. Cоздадим в этой папке файл с нашим бэкендом `app.py`.
+Добавим туда папку `backend`. Загрузим [базу данных из репозитория с полным кодом карты](https://github.com/gtitov/flask-maplibre-map/raw/refs/heads/main/backend/cities_index.sqlite) и положим в созданную папку `backend`. Cоздадим в этой папке файл с нашим бэкендом `app.py`.
 
 <FileTree>
 - backend/
@@ -360,7 +360,6 @@ map.on("load", () => {
         map.getCanvas().style.cursor = '';
     });
 })
-
 ```
 
 > Если вы уже заметили кое-какую нестыковку в наших запросах, посмотрите упражнения в конце главы
