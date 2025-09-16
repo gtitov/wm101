@@ -54,6 +54,9 @@ export default defineConfig({
                         collapsed: true
                     }
                 }
+            ],
+            social: [
+                { icon: 'github', label: 'GitHub', href: 'https://github.com/gtitov/wm101' },
             ]
         }),
         react()
