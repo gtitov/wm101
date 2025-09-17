@@ -2,13 +2,18 @@
 import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
 
-import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
     integrations: [
         starlight({
             title: 'Практическое введение в веб-картографию',
+            logo: {
+                dark: '/public/logo-dark.png',
+                light: '/public/logo-light.png',
+                alt: 'Практическое введение в веб-картографию',
+                replacesTitle: true
+            },
             description: 'Веб-картография и веб-картографирование: практическое пособие',
             favicon: '/icon.png',
             head: [
@@ -36,7 +41,6 @@ export default defineConfig({
                 }
             },
             components: {
-                SiteTitle: './src/components/SiteTitle.astro',
                 Sidebar: './src/components/Sidebar.astro',
             },
             sidebar: [
@@ -58,7 +62,6 @@ export default defineConfig({
             social: [
                 { icon: 'github', label: 'GitHub', href: 'https://github.com/gtitov/wm101' },
             ]
-        }),
-        react()
+        })
     ],
 });
