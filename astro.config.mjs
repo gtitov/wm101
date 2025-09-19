@@ -49,7 +49,7 @@ export default defineConfig({
                 '2-api',
                 '3-backend',
                 '4-tiles',
-                // 'what-next',
+                'what-next',
                 '99-references',
                 {
                     label: 'Внеклассное чтение',
