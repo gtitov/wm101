@@ -1,8 +1,10 @@
 // @ts-check
 import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
+import logoLight from './public/logo-light.png';
 
 
+console.log(logoLight)
 // https://astro.build/config
 export default defineConfig({
     integrations: [
@@ -32,6 +34,14 @@ export default defineConfig({
                         href: '/favicon.ico',
                         sizes: '32x32',
                     },
+                },
+                {
+                    tag: 'meta',
+                    attrs: { property: 'og:image', content: "/logo-light.png" },
+                },
+                {
+                    tag: 'meta',
+                    attrs: { name: 'twitter:image', content: "/logo-light.png" },
                 }
             ],
             locales: {
