@@ -1,8 +1,19 @@
 ---
 import Default from "@astrojs/starlight/components/Sidebar.astro";
+import by from "../assets/by.svg";
+import cc from "../assets/cc.svg";
 ---
 
 <Default><slot /></Default>
 <small>
   Титов Г. С. Практическое введение в веб&#8209;картографию. Москва, 2025.
 </small>
+
+<a
+  href="https://creativecommons.org/licenses/by/4.0/"
+  style="text-decoration: none; display: flex; align-items: center; gap: 9px; color: var(--sl-color-text)"
+>
+  <span>CC BY 4.0</span>
+  <img src={cc.src} alt="" style="width:1.5em;height:1.5em;" />
+  <img src={by.src} alt="" style="width:1.5em;height:1.5em;" />
+</a>
