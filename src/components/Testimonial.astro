@@ -1,0 +1,64 @@
+---
+interface Props {
+  name: string;
+  title: string;
+}
+
+const { name, title } = Astro.props;
+---
+
+<li class="testimonial">
+  <blockquote class="quote">
+    <slot />
+  </blockquote>
+  <div class="footer">
+    <div>
+      <p class="name">{name}</p>
+      <span class="title">{title}</span>
+    </div>
+  </div>
+</li>
+
+<style>
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+  @media (min-width: 50rem) {
+    .testimonial {
+      gap: 2em;
+    }
+  }
+  .quote {
+    position: relative;
+    padding-inline-start: 1.5em;
+  }
+  .quote::before {
+    position: absolute;
+    content: "";
+    inset-block: 0.5em;
+    inset-inline-start: 0;
+    border-inline-start: 1px solid var(--sl-color-text-accent);
+  }
+  .quote > :global(* + *) {
+    margin-top: 0.75em;
+  }
+
+  .footer {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .name {
+    font-weight: 600;
+    font-size: var(--sl-text-h4);
+    color: var(--sl-color-white);
+    line-height: var(--sl-line-height-headings);
+  }
+  .title {
+    color: var(--sl-color-text-accent);
+    line-height: 2px;
+  }
+</style>

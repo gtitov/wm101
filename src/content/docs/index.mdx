@@ -1,0 +1,84 @@
+---
+title: "Титульный лист"
+sidebar:
+  label: Титульный лист
+description: Практическое введение в веб-картографию. Учебное пособие. Титов Герман.
+tableOfContents: false
+hero:
+  title: ""
+  # tagline: "УДК 528.92<br>ББК 26.173.06<br>Т45"
+  tagline: "Ключевые принципы веб&#8209;картографии через практику создания веб&#8209;карт"
+  image:
+    file: ../../assets/book-cover.jpg
+  actions:
+    - text: Приступить
+      link: /intro/
+      icon: right-arrow
+    - text: Репозиторий
+      link: https://github.com/gtitov/wm101
+      icon: external
+      variant: minimal
+      attrs:
+        rel: me
+next: false
+---
+
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+import AboutAstro from '../../components/AboutAstro.astro';
+import TestimonialGrid from '../../components/TestimonialGrid.astro';
+import Testimonial from '../../components/Testimonial.astro';
+
+<CardGrid stagger>
+	<Card title="Картографам" icon="puzzle">
+		Даст понимание возможностей создания и публикации интерактивных картографических произведений 
+	</Card>
+	<Card title="Разработчикам" icon="laptop">
+		Поможет разобраться со спецификой передачи и визуализации пространственных данных
+	</Card>
+	<Card title="Менеджерам" icon="document">
+		Подскажет, на что обратить внимание при постановке задач в продуктах, которые содержат веб&#8209;карты
+	</Card>
+	<Card title="Начинающим" icon="rocket">
+		Позволит сделать уверенный шаг в сферу веб-картографии
+	</Card>
+</CardGrid>
+
+<TestimonialGrid title="Что говорят слушатели">
+  <Testimonial
+    name="Иван"
+  >
+    Для меня же это было темное царство, поэтому курс был особенно интересным, т.к позволил если не овладеть, то точно познакомиться с процессом веб-картографии
+  </Testimonial>
+
+  <Testimonial
+    name="Аноним"
+  >
+    Замечательный курс, подойдет тем, кто ищет информацию о MapLibre, о том, как связан фронтенд и бэкенд, о современных технологиях создания тайлов.
+  </Testimonial>
+
+  <Testimonial
+    name="Михаил"
+  >
+    Сложно представить успешного картографа, не задействованного в разработке картографических интернет-приложений. Короткий курс Германа Титова — отличное введение в направление.
+  </Testimonial>
+
+  <Testimonial
+    name="Вера"
+  >
+    Для разработчиков, которых занесло в картографию - курс огонь!
+  </Testimonial>
+
+  <Testimonial
+  >
+    Записаться на курс и посмотреть другие отзывы можно <a href='https://cartetika.ru/webcartography-i' target='_blank'>в Картетике</a>
+  </Testimonial>
+</TestimonialGrid>
+
+{/* <AboutAstro title="Сделано при поддержке">
+Astro is the all-in-one web framework designed for speed.
+Pull your content from anywhere and deploy everywhere, all powered by your favorite UI components and libraries.
+
+[Learn about Astro](https://astro.build/)
+
+</AboutAstro> */}

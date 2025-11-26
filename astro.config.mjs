@@ -55,6 +55,7 @@ export default defineConfig({
             },
             sidebar: [
                 'index',
+                'intro',
                 '1-web-map',
                 '2-api',
                 '3-backend',
