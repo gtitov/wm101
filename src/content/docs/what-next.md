@@ -1,8 +1,8 @@
 ---
 title: А дальше
 tableOfContents: false
-banner:
-  content: <a href='https://cartetika.ru/webcartography-i/?utm_source=wm101' target='_blank' style='text-decoration:none'>Открыт набор на курс повышения квалификации с 16 марта [↗]</a>
+# banner:
+#   content: <a href='https://cartetika.ru/webcartography-i/?utm_source=wm101' target='_blank' style='text-decoration:none'>Открыт набор на курс повышения квалификации с 16 марта [↗]</a>
 ---
 
 <div style="text-align: right; font-style: italic; line-height: 0.5rem">
