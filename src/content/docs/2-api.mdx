@@ -67,13 +67,12 @@ API (Application Programming Interface) обычно переводят как "
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Карта вакансий</title>
         <link rel="stylesheet" href="style.css">
-        <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script> 
-        <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+        <link href="https://unpkg.com/maplibre-gl@^6/dist/maplibre-gl.css" rel="stylesheet" />
     </head>
 
     <body>
         <div id="map"></div>
-        <script src="main.js"></script>
+        <script type="module" src="main.js"></script>
     </body>
 
     </html>
@@ -92,6 +91,7 @@ API (Application Programming Interface) обычно переводят как "
   </TabItem>
   <TabItem label="JavaScript">
     ```js title="main.js"
+    import * as maplibregl from 'https://unpkg.com/maplibre-gl@^6/dist/maplibre-gl.mjs';
     const map = new maplibregl.Map({
       container: 'map',
       style: "https://raw.githubusercontent.com/gtitov/basemaps/refs/heads/master/positron-nolabels.json",
@@ -331,12 +331,30 @@ h2 {
 .then((csv) => {
   // ...
   geojson.features.map((f) => {
-    document.getElementById(
-      "list-all"
-    ).innerHTML += `<div class="list-item">
-    <h4>${f.properties["Вакансия"]}</h4>
-    <a href='#' onclick="map.flyTo({center: [${f.geometry.coordinates}], zoom: 10})">Найти на карте</a>
-    </div><hr>`;
+    const itemContainer = document.createElement("div");
+    itemContainer.className = "list-item";
+
+    const title = document.createElement("h4");
+    title.textContent = f.properties["Вакансия"];
+
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = "Найти на карте";
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      map.flyTo({
+        center: f.geometry.coordinates,
+        zoom: 10
+      });
+    });
+
+    itemContainer.appendChild(title);
+    itemContainer.appendChild(link);
+
+    const listAll = document.getElementById("list-all");
+    listAll.appendChild(itemContainer);
+    listAll.appendChild(document.createElement("hr"));
   });
 })
 ```
