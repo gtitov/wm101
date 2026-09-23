@@ -120,24 +120,23 @@ import Option from '../../components/Option.astro';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Население мира</title>
-    <!-- Запрашиваем стили 👇 -->
+    <!-- Запрашиваем свои стили 👇 -->
     <link rel="stylesheet" href="style.css">
-    <!-- Запрашиваем библиотеку MapLibre 👇 -->
-    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script> 
-    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+    <!-- Запрашиваем стили MapLibre 👇 -->
+    <link href="https://unpkg.com/maplibre-gl@^6/dist/maplibre-gl.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Размечаем контейнер для карты 👇 -->
     <div id="map"></div>
     <!-- Запрашиваем логику карты 👇 -->
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>
 ```
 
-Библиотеку MapLibre мы запрашиваем из внешнего ресурса, а вот стили и логику карты нам нужно создать.
+Стили MapLibre мы запрашиваем из внешнего ресурса, а вот свои стили нам нужно создать.
 
 Создадим файл стилей `style.css`.
 
@@ -155,6 +154,9 @@ import Option from '../../components/Option.astro';
 И файл с логикой карты `main.js`.
 
 ```js title="main.js"
+// Запрашиваем модуль maplibregl
+import * as maplibregl from 'https://unpkg.com/maplibre-gl@^6/dist/maplibre-gl.mjs';
+
 // Инициализируем карту
 const map = new maplibregl.Map({
   container: 'map',
