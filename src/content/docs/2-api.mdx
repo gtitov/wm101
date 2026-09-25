@@ -58,6 +58,7 @@ API (Application Programming Interface) обычно переводят как "
 
 <Tabs>
   <TabItem label="HTML">
+
     ```html title="index.html"
     <!DOCTYPE html>
     <html lang="en">
@@ -77,8 +78,11 @@ API (Application Programming Interface) обычно переводят как "
 
     </html>
     ```
+
   </TabItem>
+
   <TabItem label="CSS">
+
     ```css title="style.css"
     #map {
         position: absolute;
@@ -88,8 +92,11 @@ API (Application Programming Interface) обычно переводят как "
         right: 0;
     }
     ```
+
   </TabItem>
+
   <TabItem label="JavaScript">
+  
     ```js title="main.js"
     import * as maplibregl from 'https://unpkg.com/maplibre-gl@^6/dist/maplibre-gl.mjs';
     const map = new maplibregl.Map({
@@ -99,26 +106,33 @@ API (Application Programming Interface) обычно переводят как "
       zoom: 4
     });
     ```
+
   </TabItem>
 </Tabs>
 
 <Card title={'Строка <code>&lt;div id="map">&lt;/div></code> это'}>
+
     <MultipleChoice>
+
       <Option isCorrect>
         контейнер для карты
       </Option>
+
       <Option>
         инициализация карты
       </Option>
+
       <Option>
         стиль карты
       </Option>
+
     </MultipleChoice>
 
     <details>
       <summary>Узнать ответ</summary>
       Этой строкой мы размечаем контейнер для карты в HTML-файле. В JavaScript-файле мы обращаемся к этому контейнеру по `id`
     </details>
+    
 </Card>
 
 Удостоверимся, что карта отображается на локальном сервере.
