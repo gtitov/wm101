@@ -377,23 +377,43 @@ h2 {
     features.map(f => {
       if (f.properties.cluster) {
         map.getSource("vacancies").getClusterLeaves(
-            clusterId = f.properties.cluster_id,
-            limit = f.properties.point_count,
-            offset = 0
-        )
-          .then((clusterFeatures) => {
-            clusterFeatures.map((feature) => document.getElementById("list-selected")
-              .innerHTML += `<div class="list-item">
-              <h4>${feature.properties["Вакансия"]}</h4>
-              <a target="blank_" href='${feature.properties["Ссылка на сайте Картетики"]}'>Подробнее</a>
-              </div><hr>`)
+            f.properties.cluster_id, // clusterId
+            f.properties.point_count, // limit
+            0 // offset
+        ).then((clusterFeatures) => {
+            clusterFeatures.map((feature) => {
+              const itemContainer = document.createElement("div"); // императивное создание HTML-элементов
+              itemContainer.className = "list-item";
+
+              const title = document.createElement("h4");
+              title.textContent = f.properties["Вакансия"];
+
+              const link = document.createElement("a");
+              link.href = "#";
+              link.textContent = "Найти на карте";
+
+              link.addEventListener("click", (e) => {
+                e.preventDefault();
+                map.flyTo({
+                  center: f.geometry.coordinates,
+                  zoom: 10
+                });
+              });
+
+              itemContainer.appendChild(title);
+              itemContainer.appendChild(link);
+
+              const listAll = document.getElementById("list-all");
+              listAll.appendChild(itemContainer);
+              listAll.appendChild(document.createElement("hr"));
+            })
           });
       } else {
         document.getElementById("list-selected")
           .innerHTML += `<div class="list-item">
-          <h4>${f.properties["Вакансия"]}</h4>
-          <a target="blank_" href='${f.properties["Ссылка на сайте Картетики"]}'>Подробнее</a>
-          </div><hr>`
+            <h4>${f.properties["Вакансия"]}</h4>
+            <a target="blank_" href='${f.properties["Ссылка на сайте Картетики"]}'>Подробнее</a>
+          </div><hr>` // декларативное создание HTML-элементов
       }
     })
   })
