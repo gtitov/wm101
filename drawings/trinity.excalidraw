@@ -1,0 +1,903 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "freedraw",
+      "version": 149,
+      "versionNonce": 242331598,
+      "isDeleted": false,
+      "id": "KkWIc3fHRyayxhetwizN3",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 792,
+      "y": 990,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "#ffec99",
+      "width": 152,
+      "height": 169,
+      "seed": 802653326,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1705609689979,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -11,
+          11
+        ],
+        [
+          -14,
+          15
+        ],
+        [
+          -21,
+          22
+        ],
+        [
+          -26,
+          27
+        ],
+        [
+          -33,
+          34
+        ],
+        [
+          -36,
+          37
+        ],
+        [
+          -42,
+          45
+        ],
+        [
+          -49,
+          53
+        ],
+        [
+          -55,
+          62
+        ],
+        [
+          -56,
+          64
+        ],
+        [
+          -60,
+          71
+        ],
+        [
+          -62,
+          75
+        ],
+        [
+          -66,
+          80
+        ],
+        [
+          -70,
+          90
+        ],
+        [
+          -70,
+          93
+        ],
+        [
+          -70,
+          98
+        ],
+        [
+          -70,
+          99
+        ],
+        [
+          -70,
+          108
+        ],
+        [
+          -70,
+          109
+        ],
+        [
+          -70,
+          115
+        ],
+        [
+          -70,
+          121
+        ],
+        [
+          -70,
+          124
+        ],
+        [
+          -70,
+          130
+        ],
+        [
+          -70,
+          132
+        ],
+        [
+          -70,
+          136
+        ],
+        [
+          -70,
+          138
+        ],
+        [
+          -70,
+          139
+        ],
+        [
+          -70,
+          140
+        ],
+        [
+          -70,
+          144
+        ],
+        [
+          -70,
+          147
+        ],
+        [
+          -70,
+          150
+        ],
+        [
+          -70,
+          151
+        ],
+        [
+          -70,
+          152
+        ],
+        [
+          -70,
+          155
+        ],
+        [
+          -70,
+          156
+        ],
+        [
+          -70,
+          157
+        ],
+        [
+          -70,
+          158
+        ],
+        [
+          -70,
+          162
+        ],
+        [
+          -70,
+          164
+        ],
+        [
+          -70,
+          165
+        ],
+        [
+          -70,
+          166
+        ],
+        [
+          -70,
+          167
+        ],
+        [
+          -70,
+          168
+        ],
+        [
+          -67,
+          168
+        ],
+        [
+          -65,
+          168
+        ],
+        [
+          -59,
+          168
+        ],
+        [
+          -53,
+          168
+        ],
+        [
+          -48,
+          168
+        ],
+        [
+          -40,
+          169
+        ],
+        [
+          -23,
+          169
+        ],
+        [
+          -13,
+          169
+        ],
+        [
+          -4,
+          169
+        ],
+        [
+          4,
+          169
+        ],
+        [
+          16,
+          169
+        ],
+        [
+          19,
+          169
+        ],
+        [
+          24,
+          169
+        ],
+        [
+          26,
+          169
+        ],
+        [
+          32,
+          169
+        ],
+        [
+          34,
+          169
+        ],
+        [
+          36,
+          169
+        ],
+        [
+          40,
+          169
+        ],
+        [
+          41,
+          169
+        ],
+        [
+          44,
+          168
+        ],
+        [
+          46,
+          167
+        ],
+        [
+          50,
+          166
+        ],
+        [
+          53,
+          165
+        ],
+        [
+          60,
+          163
+        ],
+        [
+          61,
+          161
+        ],
+        [
+          63,
+          161
+        ],
+        [
+          64,
+          160
+        ],
+        [
+          67,
+          158
+        ],
+        [
+          71,
+          157
+        ],
+        [
+          72,
+          157
+        ],
+        [
+          73,
+          157
+        ],
+        [
+          73,
+          156
+        ],
+        [
+          76,
+          154
+        ],
+        [
+          77,
+          154
+        ],
+        [
+          79,
+          153
+        ],
+        [
+          80,
+          152
+        ],
+        [
+          80,
+          151
+        ],
+        [
+          82,
+          150
+        ],
+        [
+          82,
+          149
+        ],
+        [
+          82,
+          147
+        ],
+        [
+          82,
+          145
+        ],
+        [
+          82,
+          141
+        ],
+        [
+          82,
+          134
+        ],
+        [
+          82,
+          128
+        ],
+        [
+          81,
+          121
+        ],
+        [
+          80,
+          118
+        ],
+        [
+          79,
+          112
+        ],
+        [
+          79,
+          109
+        ],
+        [
+          77,
+          98
+        ],
+        [
+          76,
+          94
+        ],
+        [
+          73,
+          81
+        ],
+        [
+          72,
+          77
+        ],
+        [
+          70,
+          72
+        ],
+        [
+          67,
+          63
+        ],
+        [
+          65,
+          57
+        ],
+        [
+          63,
+          53
+        ],
+        [
+          62,
+          52
+        ],
+        [
+          61,
+          51
+        ],
+        [
+          58,
+          47
+        ],
+        [
+          56,
+          45
+        ],
+        [
+          52,
+          41
+        ],
+        [
+          46,
+          35
+        ],
+        [
+          44,
+          33
+        ],
+        [
+          40,
+          29
+        ],
+        [
+          37,
+          25
+        ],
+        [
+          36,
+          24
+        ],
+        [
+          32,
+          20
+        ],
+        [
+          32,
+          19
+        ],
+        [
+          31,
+          18
+        ],
+        [
+          28,
+          16
+        ],
+        [
+          26,
+          14
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          16,
+          10
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "simulatePressure": true,
+      "pressures": []
+    },
+    {
+      "type": "ellipse",
+      "version": 168,
+      "versionNonce": 1253920142,
+      "isDeleted": false,
+      "id": "TKZoTlXaSxV6iO6VLGK4c",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 601,
+      "y": 793,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 366,
+      "height": 368.5328719723183,
+      "seed": 1025945764,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": [],
+      "updated": 1705609586997,
+      "link": null,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "version": 96,
+      "versionNonce": 960605991,
+      "isDeleted": false,
+      "id": "TKmkzC_fwuzEbOOzIOjn-",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 728,
+      "y": 1096.5,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 130.3000030517578,
+      "height": 20,
+      "seed": 1838665550,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357500,
+      "link": null,
+      "locked": false,
+      "fontSize": 16,
+      "fontFamily": 1,
+      "text": "веб-картография",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "веб-картография",
+      "lineHeight": 1.25,
+      "baseline": 14
+    },
+    {
+      "type": "ellipse",
+      "version": 193,
+      "versionNonce": 49660430,
+      "isDeleted": false,
+      "id": "_jRMSWzpy1CmPxI5yj00R",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 721,
+      "y": 951.7335640138408,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 366,
+      "height": 368.5328719723183,
+      "seed": 1224193806,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": [],
+      "updated": 1705609586997,
+      "link": null,
+      "locked": false
+    },
+    {
+      "type": "ellipse",
+      "version": 236,
+      "versionNonce": 566865362,
+      "isDeleted": false,
+      "id": "DyMSVCA7Z0ZlAObvTg6d2",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 505,
+      "y": 952.7335640138408,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 366,
+      "height": 368.5328719723183,
+      "seed": 1506003854,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": [],
+      "updated": 1705609586997,
+      "link": null,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "version": 104,
+      "versionNonce": 944863945,
+      "isDeleted": false,
+      "id": "9ygN8vJRJDDQ5df3_XsX0",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 723,
+      "y": 1188,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 151.1999969482422,
+      "height": 40,
+      "seed": 1218805394,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357500,
+      "link": null,
+      "locked": false,
+      "fontSize": 16,
+      "fontFamily": 1,
+      "text": "геоинформационное\nкартографирование",
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "геоинформационное\nкартографирование",
+      "lineHeight": 1.25,
+      "baseline": 34
+    },
+    {
+      "type": "text",
+      "version": 107,
+      "versionNonce": 1269772871,
+      "isDeleted": false,
+      "id": "cBzdYyuyOuUuxSosM6-hQ",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 640.5499877929688,
+      "y": 878.5,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 280.1000061035156,
+      "height": 35,
+      "seed": 22364430,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357501,
+      "link": null,
+      "locked": false,
+      "fontSize": 28,
+      "fontFamily": 1,
+      "text": "сетевые технологии",
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "сетевые технологии",
+      "lineHeight": 1.25,
+      "baseline": 25
+    },
+    {
+      "type": "text",
+      "version": 210,
+      "versionNonce": 1875458473,
+      "isDeleted": false,
+      "id": "TdiJ07IIl-FGABLE6R_9R",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 477.0166702270508,
+      "y": 1188.5,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 173.96665954589844,
+      "height": 35,
+      "seed": 973315534,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357501,
+      "link": null,
+      "locked": false,
+      "fontSize": 28,
+      "fontFamily": 1,
+      "text": "картография",
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "картография",
+      "lineHeight": 1.25,
+      "baseline": 25
+    },
+    {
+      "type": "text",
+      "version": 217,
+      "versionNonce": 935285095,
+      "isDeleted": false,
+      "id": "yK0zp_H_a98pYl0hyqAd9",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 916.4333343505859,
+      "y": 1169.5,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 217.13333129882812,
+      "height": 35,
+      "seed": 1488600206,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357502,
+      "link": null,
+      "locked": false,
+      "fontSize": 28,
+      "fontFamily": 1,
+      "text": "геоинформатика",
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "геоинформатика",
+      "lineHeight": 1.25,
+      "baseline": 25
+    },
+    {
+      "type": "text",
+      "version": 155,
+      "versionNonce": 598088841,
+      "isDeleted": false,
+      "id": "SlBQnCWQ_s6Cotef0q-Cx",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 855.4833374023438,
+      "y": 978.5,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 140.76666259765625,
+      "height": 60,
+      "seed": 492948818,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357502,
+      "link": null,
+      "locked": false,
+      "fontSize": 16,
+      "fontFamily": 1,
+      "text": "вопросы оборота\nпространственных\nданных в сети",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "вопросы оборота\nпространственных\nданных в сети",
+      "lineHeight": 1.25,
+      "baseline": 54
+    },
+    {
+      "type": "text",
+      "version": 265,
+      "versionNonce": 1723763847,
+      "isDeleted": false,
+      "id": "1xgoQNXA5SdmroJBFXq58",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 568.25,
+      "y": 979,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "width": 172.13333129882812,
+      "height": 60,
+      "seed": 2118650254,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1706378357502,
+      "link": null,
+      "locked": false,
+      "fontSize": 16,
+      "fontFamily": 1,
+      "text": "вопросы отображения\nпространственных\nданных в сети",
+      "textAlign": "right",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "вопросы отображения\nпространственных\nданных в сети",
+      "lineHeight": 1.25,
+      "baseline": 54
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
